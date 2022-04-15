@@ -59,7 +59,6 @@ public class RecyclerViewFragment extends Fragment {
                                    Response<ArrayList<CovidCaseItem>> response) {
                 recyclerView = view.findViewById(R.id.recyclerview);
                 if(!response.body().isEmpty()){
-                    Log.d("hahaha", response.body().toString());
                     itemAdapter = new ItemAdapter(response.body());
                     recyclerView.setAdapter(itemAdapter);
                 }

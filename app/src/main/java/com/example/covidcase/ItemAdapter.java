@@ -32,7 +32,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         CovidCaseItem covidCase = covidCases.get(position);
         holder.tvItemCountry.setText(covidCase.getCountry());
-        holder.tvItemCase.setText(covidCase.getCases());
+        holder.tvItemCase.setText(String.valueOf(covidCase.getCases()));
     }
 
     @Override
