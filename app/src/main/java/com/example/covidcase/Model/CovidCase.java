@@ -1,14 +1,15 @@
 package com.example.covidcase.Model;
 
+import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
 public class CovidCase{
 
 	@SerializedName("CovidCase")
-	private List<CovidCaseItem> covidCase;
+	private ArrayList<CovidCaseItem> covidCase;
 
-	public List<CovidCaseItem> getCovidCase(){
+	public ArrayList<CovidCaseItem> getCovidCase(){
 		return covidCase;
 	}
 }

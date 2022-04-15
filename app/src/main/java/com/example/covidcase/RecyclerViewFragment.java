@@ -29,7 +29,6 @@ public class RecyclerViewFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private ItemAdapter itemAdapter;
-    private ArrayList<CovidCaseItem> covidCases;
 
     public static RecyclerViewFragment newInstance() {
         return new RecyclerViewFragment();
@@ -52,12 +51,18 @@ public class RecyclerViewFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         RetrofitInstance retrofitInstance = new RetrofitInstance();
-        retrofitInstance.getAPI().getCovidCases().enqueue(new Callback<ArrayList<CovidCaseItem>>() {
+        retrofitInstance.getAPI()
+                .getCovidCases()
+                .enqueue(new Callback<ArrayList<CovidCaseItem>>() {
             @Override
-            public void onResponse(Call<ArrayList<CovidCaseItem>> call, Response<ArrayList<CovidCaseItem>> response) {
+            public void onResponse(Call<ArrayList<CovidCaseItem>> call,
+                                   Response<ArrayList<CovidCaseItem>> response) {
                 recyclerView = view.findViewById(R.id.recyclerview);
-                itemAdapter = new ItemAdapter(response.body());
-                recyclerView.setAdapter(itemAdapter);
+                if(!response.body().isEmpty()){
+                    Log.d("hahaha", response.body().toString());
+                    itemAdapter = new ItemAdapter(response.body());
+                    recyclerView.setAdapter(itemAdapter);
+                }
                 recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
             }
 

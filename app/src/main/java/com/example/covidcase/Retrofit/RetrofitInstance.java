@@ -10,7 +10,7 @@ public class RetrofitInstance {
     private ApiEndpointInterface API;
 
     public RetrofitInstance(){
-        Gson gson = new GsonBuilder().setDateFormat("yyyy-mm-dd").create();
+        Gson gson = new GsonBuilder().create();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(ApiEndpointInterface.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
