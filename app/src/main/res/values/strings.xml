@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">Covid Case</string>
+    <string name="app_name">CovidTeam9</string>
+    <string name="btn_logout">Log Out</string>
+    <string name="text_login">Log In</string>
+    <string name="hint_username">Username</string>
+    <string name="text_pass">Password</string>
+    <string name="text_btnlogin">Submit</string>
+    <string name="tv_header">Covid-19 Information</string>
+    <string name="tv_team">Team 9</string>
+    <string name="nav_open">Open navigation drawer</string>
+    <string name="nav_close">Close navigation drawer</string>
+    <string name="title_home">Home</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_bookmark">Bookmark</string>
+    <string name="title_logout">Log out</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
 </resources>
